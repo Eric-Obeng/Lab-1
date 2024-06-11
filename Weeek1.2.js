@@ -104,7 +104,13 @@ const sum = (arr) => {
     return acc + elem;
   }, 0);
 };
-
 // console.log(sum([1, 2]))
 
+// d. average(arr): Calculates the average of all numbers in an array
+const average = (arr) => {
+  if (arr.length === 0) return 0;
 
+  const sum = arr.reduce((acc, elem) => acc + elem, 0);
+  return sum / arr.length;
+};
+// console.log(average([10, 20, 30]));
