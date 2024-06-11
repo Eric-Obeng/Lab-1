@@ -45,3 +45,28 @@ const isPalindrome = (str) => {
 // console.log(isPalindrome('aba'));
 
 
+// wordCount(str): Counts the number of words in a string
+const wordCount = str => {
+    let numberOfWords = 0
+    let word = false
+    
+    for(let i = 0; i < str.length; i++) {
+        //Checking for punctuations, space and special characters
+        if(str[i] === ' ' || str[i] === '\t' || str[i] === '\n' || str[i] === '\r' || str[i] === '\f') {
+            if(word) {
+                numberOfWords++
+                word = false
+            }
+        } else {
+            word = true
+        }
+    }
+
+    if(word) {
+        numberOfWords++
+    }
+
+    return numberOfWords
+}
+
+// console.log(wordCount('Welcome to Amalitech'));
