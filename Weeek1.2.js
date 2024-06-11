@@ -98,5 +98,13 @@ function filterEven(arr) {
 // let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12];
 // console.log(filterEven(numbers));
 
+// c. sum(arr): Calculates the avearge of all numbers in an array
+const sum = (arr) => {
+  return arr.reduce((acc, elem) => {
+    return acc + elem;
+  }, 0);
+};
 
-//
+// console.log(sum([1, 2]))
+
+
