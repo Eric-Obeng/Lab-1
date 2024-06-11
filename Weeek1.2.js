@@ -11,3 +11,18 @@ const capitalize = (str) => {
 console.log(capitalize('eric'))
 console.log(capitalize('aMaliTecH'))
 */
+
+//Reverse(str): Reverse a string
+const reverse = (str) => {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+
+  return reversed;
+};
+
+/***
+ * Test
+ console.log(reverse("Amalitech")); 
+ * */
