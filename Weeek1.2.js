@@ -114,3 +114,36 @@ const average = (arr) => {
   return sum / arr.length;
 };
 // console.log(average([10, 20, 30]));
+
+/****
+ * Task 3: Object Transformation
+ */
+// a. fullName(person)
+const fullName = (person) => {
+  return person["firstName"] + " " + person["lastName"];
+};
+
+/*
+const person = {
+  firstName: "Eric",
+  lastName: "Obeng",
+};
+
+console.log(fullName(person));
+*/
+
+
+// b. isAdult(person): Checks if a person is 18 or older
+const isAdult = (person) => {
+    return person.age >= 18;
+  }
+  
+ 
+  /*
+  const person1 = {
+    name: 'Eric',
+    age: 20
+  };
+
+  console.log(isAdult(person1));
+  */
