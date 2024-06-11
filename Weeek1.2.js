@@ -44,29 +44,59 @@ const isPalindrome = (str) => {
 };
 // console.log(isPalindrome('aba'));
 
-
 // wordCount(str): Counts the number of words in a string
-const wordCount = str => {
-    let numberOfWords = 0
-    let word = false
-    
-    for(let i = 0; i < str.length; i++) {
-        //Checking for punctuations, space and special characters
-        if(str[i] === ' ' || str[i] === '\t' || str[i] === '\n' || str[i] === '\r' || str[i] === '\f') {
-            if(word) {
-                numberOfWords++
-                word = false
-            }
-        } else {
-            word = true
-        }
-    }
+const wordCount = (str) => {
+  let numberOfWords = 0;
+  let word = false;
 
-    if(word) {
-        numberOfWords++
+  for (let i = 0; i < str.length; i++) {
+    //Checking for punctuations, space and special characters
+    if (
+      str[i] === " " ||
+      str[i] === "\t" ||
+      str[i] === "\n" ||
+      str[i] === "\r" ||
+      str[i] === "\f"
+    ) {
+      if (word) {
+        numberOfWords++;
+        word = false;
+      }
+    } else {
+      word = true;
     }
+  }
 
-    return numberOfWords
-}
+  if (word) {
+    numberOfWords++;
+  }
+
+  return numberOfWords;
+};
 
 // console.log(wordCount('Welcome to Amalitech'));
+
+/**
+ * Task 2: Array Transformation
+ */
+
+// a. double(arr): Double every number in an array
+const double = (arr) => {
+  const double = arr.map((elem) => elem * 2);
+  return double;
+};
+// console.log(double([2,4,6]));
+
+// b. filterEven(arr): Filter out even numbers from an array
+function filterEven(arr) {
+  const even = arr.filter((num) => {
+    return num % 2 === 0;
+  });
+  return even;
+}
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12];
+// console.log(filterEven(numbers));
+
+
+//
