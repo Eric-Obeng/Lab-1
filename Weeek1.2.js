@@ -132,14 +132,12 @@ const person = {
 console.log(fullName(person));
 */
 
-
 // b. isAdult(person): Checks if a person is 18 or older
 const isAdult = (person) => {
-    return person.age >= 18;
-  }
-  
- 
-  /*
+  return person.age >= 18;
+};
+
+/*
   const person1 = {
     name: 'Eric',
     age: 20
@@ -147,3 +145,45 @@ const isAdult = (person) => {
 
   console.log(isAdult(person1));
   */
+
+// c. filterByAge(people, minAge): Filter an array of person object to keep only those at least minAge years old
+const filterByAge = (people, minAge) => {
+  return people.filter((person) => person.age >= minAge);
+};
+
+/*
+const people = [
+  { name: "Eric", age: 20 },
+  { name: "Rhoda", age: 16 },
+  { name: "Charlie", age: 25 },
+  { name: "PK", age: 17 },
+];
+
+console.log(filterByAge(people, 18));
+*/
+
+/**
+ * Task 4: Function Composition
+ */
+/* a. Use the compose(...fns) function (you can find implementations online) to
+combine your functions in interesting ways. For example, create a function to
+reverse and capitalize a string, or to double all the even numbers in an array.
+*/
+
+const compose = (...fns) => {
+  return function (initialValue) {
+    return fns.reduceRight((acc, fn) => fn(acc), initialValue);
+  };
+};
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+function capitalizeString(str) {
+  return str.toUpperCase();
+}
+
+const reverseAndCapitalize = compose(capitalizeString, reverseString);
+
+console.log(reverseAndCapitalize("hello"));
