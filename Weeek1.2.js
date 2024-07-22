@@ -1,11 +1,11 @@
 // Task 1: String Transformations
 /** Capitalize(str): Capitalize the first letter of a striing */
 
-const capitalize = (str) => {
+function capitalize(str) {
   const newString = str.toLowerCase();
   const result = newString[0].toUpperCase() + newString.slice(1);
   return result;
-};
+}
 /***
  * Test
 console.log(capitalize('eric'))
@@ -187,3 +187,18 @@ function capitalizeString(str) {
 const reverseAndCapitalize = compose(capitalizeString, reverseString);
 
 console.log(reverseAndCapitalize("hello"));
+
+module.exports = {
+  capitalize,
+  reverse,
+  isPalindrome,
+  wordCount,
+  double,
+  filterEven,
+  sum,
+  average,
+  fullName,
+  isAdult,
+  filterByAge,
+  compose,
+};
